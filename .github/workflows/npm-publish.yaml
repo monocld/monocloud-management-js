@@ -147,6 +147,6 @@ jobs:
           prerelease: ${{ !!needs.release.outputs.prerelease }}
           name: v${{ needs.release.outputs.version }}
           body: |
-            ${{ steps.extract_changelog_core.outputs.changelog_content != '' && format('### 📦 Core<br />{0}<br />', steps.extract_changelog_core.outputs.changelog_content) || '' }}
-            ${{ steps.extract_changelog_admin.outputs.changelog_content != '' && format('### 💻 Admin<br />{0}<br />', steps.extract_changelog_admin.outputs.changelog_content) || '' }}
-            ${{ steps.extract_changelog_identity.outputs.changelog_content != '' && format('### 👤 Identity<br />{0}<br />', steps.extract_changelog_identity.outputs.changelog_content) || '' }}
+            ${{ steps.extract_changelog_core.outputs.changelog_content != '' && format('### 📦 Core<br /><br />{0}<br />', steps.extract_changelog_core.outputs.changelog_content) || '' }}
+            ${{ steps.extract_changelog_admin.outputs.changelog_content != '' && format('### 💻 Admin<br /><br />{0}<br />', steps.extract_changelog_admin.outputs.changelog_content) || '' }}
+            ${{ steps.extract_changelog_identity.outputs.changelog_content != '' && format('### 👤 Identity<br /><br />{0}<br />', steps.extract_changelog_identity.outputs.changelog_content) || '' }}
