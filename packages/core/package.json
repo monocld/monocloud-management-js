@@ -1,6 +1,6 @@
 {
   "name": "@monocloud/management-core",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "MonoCloud Management JavaScript Core Library",
   "keywords": [
     "monocloud",
