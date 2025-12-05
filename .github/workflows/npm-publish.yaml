@@ -139,6 +139,35 @@ jobs:
           echo "$CLEAN_LOG_CONTENT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
+      - name: Build Release Body
+        id: build_body
+        if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'changeset-release/main' && needs.release.outputs.was_published == 'true'
+        run: |
+          echo "body=" >> $GITHUB_OUTPUT
+          if [ -n "${{ steps.extract_changelog_core.outputs.changelog_content }}" ]; then
+            {
+              echo "### 📦 Core"
+              echo "${{ steps.extract_changelog_core.outputs.changelog_content }}"
+              echo ""
+            } >> $GITHUB_OUTPUT
+          fi
+
+          if [ -n "${{ steps.extract_changelog_admin.outputs.changelog_content }}" ]; then
+            {
+              echo "### 💻 Admin"
+              echo "${{ steps.extract_changelog_admin.outputs.changelog_content }}"
+              echo ""
+            } >> $GITHUB_OUTPUT
+          fi
+
+          if [ -n "${{ steps.extract_changelog_identity.outputs.changelog_content }}" ]; then
+            {
+              echo "### 👤 Identity"
+              echo "${{ steps.extract_changelog_identity.outputs.changelog_content }}"
+              echo ""
+            } >> $GITHUB_OUTPUT
+          fi
+
       - name: Create GitHub Release
         if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'changeset-release/main' && needs.release.outputs.was_published == 'true'
         uses: ncipollo/release-action@v1
@@ -146,7 +175,4 @@ jobs:
           tag: v${{ needs.release.outputs.version }}
           prerelease: ${{ !!needs.release.outputs.prerelease }}
           name: v${{ needs.release.outputs.version }}
-          body: |
-            ${{ steps.extract_changelog_core.outputs.changelog_content != '' && format('### 📦 Core<br /><br />{0}<br />', steps.extract_changelog_core.outputs.changelog_content) || '' }}
-            ${{ steps.extract_changelog_admin.outputs.changelog_content != '' && format('### 💻 Admin<br /><br />{0}<br />', steps.extract_changelog_admin.outputs.changelog_content) || '' }}
-            ${{ steps.extract_changelog_identity.outputs.changelog_content != '' && format('### 👤 Identity<br /><br />{0}<br />', steps.extract_changelog_identity.outputs.changelog_content) || '' }}
+          body: ${{ steps.build_body.outputs.body }}
