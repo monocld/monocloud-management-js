@@ -1,6 +1,6 @@
 {
   "name": "@monocloud/management-admin",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "MonoCloud Management Admin JavaScript Library",
   "keywords": [
     "monocloud",
