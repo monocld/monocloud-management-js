@@ -1,5 +1,12 @@
 # @monocloud/management-identity
 
+## 0.1.6
+
+### Patch Changes
+
+- e3d6701: herteryert
+  - @monocloud/management-core@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes
