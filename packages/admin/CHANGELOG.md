@@ -1,5 +1,12 @@
 # @monocloud/management-admin
 
+## 0.1.7
+
+### Patch Changes
+
+- 0f4be8b: a
+  - @monocloud/management-core@0.1.7
+
 ## 0.1.6
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@monocloud/management-identity",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "MonoCloud Management Identity JavaScript Library",
   "keywords": [
     "monocloud",
