@@ -5,7 +5,7 @@
  */
 export interface UpdateUsernameRequest {
   /**
-   * The new username to be set.
+   * The username to assign to the user. Must comply with the configured username policy, including format and uniqueness requirements.
    * @type {string}
    * @memberof UpdateUsernameRequest
    */

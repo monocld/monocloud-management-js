@@ -5,7 +5,7 @@
  */
 export interface UpdateClaimsRequest {
   /**
-   * The user\'s full name.
+   * Full name of the user.
    * @type {string}
    * @memberof UpdateClaimsRequest
    */
@@ -17,7 +17,7 @@ export interface UpdateClaimsRequest {
    */
   given_name?: string | null;
   /**
-   * The user\'s middle name or initial.
+   * The user\'s middle name or initial, if applicable.
    * @type {string}
    * @memberof UpdateClaimsRequest
    */
@@ -35,7 +35,7 @@ export interface UpdateClaimsRequest {
    */
   nickname?: string | null;
   /**
-   * The URI pointing to the user\'s profile picture.
+   * URL of the user’s profile image
    * @type {string}
    * @memberof UpdateClaimsRequest
    */

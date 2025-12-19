@@ -8,13 +8,13 @@ import { CreateGroupRequest, Group, PatchGroupRequest } from '../models';
 
 export class GroupsClient extends MonoCloudClientBase {
   /**
-   * Retrieves a paginated list of groups. The endpoint allows you to specify optional search parameters to filter and refine the results.
-   * @summary Get all groups
+   * Retrieves a paginated list of groups. Optional query parameters allow searching, filtering, and sorting the results.
+   * @summary List all groups
    * @param {number} [page] The page number to retrieve.
-   * @param {number} [size] The number of items per page.
-   * @param {string} [filter] A query filter to apply when searching for groups.
-   * @param {string} [sort] Specifies the sort criteria in the \'sort_key:sort_order\' format. The sort order value can be \'1\' for ascending and \'-1\' for descending.  Acceptable sort key values are \'name\', \'type\', \'clients_assigned\', \'users_assigned\', \'last_assigned\', \'creation_time\', and \'last_updated\'.
-   * @returns Group[] - Successfully retrieved groups
+   * @param {number} [size] The number of groups to return per page. The maximum allowed value is 50.
+   * @param {string} [filter] Optional Lucene-style filter expression used to search by attributes.
+   * @param {string} [sort] Sort expression in the format `field:direction`, where direction is `1` for ascending or `-1` for descending.  Supported fields include - name, type, clients_assigned, users_assigned, last_assigned, creation_time, last_updated.
+   * @returns Group[] - The groups were retrieved successfully
    * @throws {MonoCloudException}
    * @memberof GroupsClient
    *
@@ -51,10 +51,10 @@ export class GroupsClient extends MonoCloudClientBase {
   }
 
   /**
-   * Creates a group that can be used to organize users, and manage access control.
+   * Creates a new group that can be referenced in access policies, role assignments or user membership management.
    * @summary Create a group
-   * @param {CreateGroupRequest} createGroupRequest The create group request.
-   * @returns Group - Successfully created the group
+   * @param {CreateGroupRequest} createGroupRequest The create group request
+   * @returns Group - Group was created successfully
    * @throws {MonoCloudException}
    * @memberof GroupsClient
    *
@@ -72,10 +72,10 @@ export class GroupsClient extends MonoCloudClientBase {
   }
 
   /**
-   * Retrieves details about a specific group using its ID.
-   * @summary Get a group
-   * @param {string} groupId The ID of the group to retrieve.
-   * @returns Group - Successfully retrieved the group
+   * Retrieves detailed information for the specified group.
+   * @summary Retrieve a group
+   * @param {string} groupId The unique identifier of the group
+   * @returns Group - The group was retrieved successfully
    * @throws {MonoCloudException}
    * @memberof GroupsClient
    *
@@ -92,10 +92,10 @@ export class GroupsClient extends MonoCloudClientBase {
   }
 
   /**
-   * Permanently deletes a group and unassigns all users associated with it. This action is irreversible.
+   * Permanently removes the specified group. Users who are members of this group will no longer be associated with it after deletion.
    * @summary Delete a group
-   * @param {string} groupId The ID of the group to be deleted.
-   * @returns Successfully deleted the group
+   * @param {string} groupId The unique identifier of the group to delete
+   * @returns The group was deleted successfully
    * @throws {MonoCloudException}
    * @memberof GroupsClient
    *
@@ -112,11 +112,11 @@ export class GroupsClient extends MonoCloudClientBase {
   }
 
   /**
-   * Updates specified fields within the group. Only the data provided in the request will be updated.
+   * Applies a partial update to the specified group. Only fields provided in the request are updated; all other fields remain unchanged.
    * @summary Update a group
-   * @param {string} groupId The ID of the group to be updated.
+   * @param {string} groupId The unique identifier of the group
    * @param {PatchGroupRequest} patchGroupRequest The update group request.
-   * @returns Group - Successfully updated the fields for the group
+   * @returns Group - The group was updated successfully
    * @throws {MonoCloudException}
    * @memberof GroupsClient
    *

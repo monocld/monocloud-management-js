@@ -5,19 +5,19 @@
  */
 export interface AddEmailRequest {
   /**
-   * The email address to add.
+   * The email address to add to the user’s account.
    * @type {string}
    * @memberof AddEmailRequest
    */
   email: string;
   /**
-   * Indicates whether the email address is verified.
+   * Indicates whether the email should be marked as verified when added. If false, verification may be required before the email can be used in login or recovery flows.
    * @type {boolean}
    * @memberof AddEmailRequest
    */
   is_verified?: boolean;
   /**
-   * Specifies whether the email restriction checks should be skipped.
+   * Skips blacklist validation for the provided email.
    * @type {boolean}
    * @memberof AddEmailRequest
    */

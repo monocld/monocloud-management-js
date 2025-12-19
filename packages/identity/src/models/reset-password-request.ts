@@ -5,13 +5,13 @@
  */
 export interface ResetPasswordRequest {
   /**
-   * Specifies whether to send the password reset email to the user.
+   * Specifies whether the reset link should be automatically delivered to the user via email.
    * @type {boolean}
    * @memberof ResetPasswordRequest
    */
   send_email?: boolean;
   /**
-   * Specifies the expiry time for the password reset link (in seconds).
+   * Lifetime of the reset link in seconds; defaults to system configuration if omitted.
    * @type {number}
    * @memberof ResetPasswordRequest
    */

@@ -5,7 +5,7 @@
  */
 export interface VerifyEmailRequest {
   /**
-   * Specifies the expiry time for the verification link (in seconds).
+   * Lifetime of the verification link in seconds; defaults to system configuration if omitted.
    * @type {number}
    * @memberof VerifyEmailRequest
    */

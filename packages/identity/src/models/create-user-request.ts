@@ -7,61 +7,61 @@ import { PasswordAlgorithms } from './password-algorithms';
  */
 export interface CreateUserRequest {
   /**
-   * The unique username for the user.
+   * The username to assign to the user. Must comply with the configured username policy, including format and uniqueness requirements.
    * @type {string}
    * @memberof CreateUserRequest
    */
   username?: string | null;
   /**
-   * The user\'s email address.
+   * The user’s email address.
    * @type {string}
    * @memberof CreateUserRequest
    */
   email?: string | null;
   /**
-   * Indicates whether the user\'s email address is verified.
+   * Indicates whether the email should be marked as verified when added. If false, verification may be required before the email can be used in login or recovery flows.
    * @type {boolean}
    * @memberof CreateUserRequest
    */
   email_verified?: boolean | null;
   /**
-   * The user\'s phone number, starting with a `+` followed by the country code.
+   * The phone number to add to the user’s account, provided in E.164 format (e.g., +14085551234).
    * @type {string}
    * @memberof CreateUserRequest
    */
   phone_number?: string | null;
   /**
-   * Indicates whether the user\'s phone number is verified.
+   * Indicates whether the phone number should be marked as verified when added. If false, verification may be required before the number can be used in login or recovery flows.
    * @type {boolean}
    * @memberof CreateUserRequest
    */
   phone_number_verified?: boolean | null;
   /**
-   * The password for the user, which will be used for authentication.
+   * Plaintext password to assign to the user.
    * @type {string}
    * @memberof CreateUserRequest
    */
   password?: string | null;
   /**
-   * The password hash for the user, which will be used for authentication.
+   * A pre-hashed password value. Useful during migrations to avoid forcing a password reset.
    * @type {string}
    * @memberof CreateUserRequest
    */
   password_hash?: string | null;
   /**
-   * The algorithm used the hash the password for the user.
+   * The hashing algorithm used for the provided password hash.
    * @type {PasswordAlgorithms}
    * @memberof CreateUserRequest
    */
   password_hash_algorithm?: PasswordAlgorithms;
   /**
-   * Specifies whether the specified password is temporary and will require the user to reset their password on the next sign-in.
+   * Indicates whether the provided password is temporary. If true, the user must reset their password at their next sign-in.
    * @type {boolean}
    * @memberof CreateUserRequest
    */
   is_temporary_password?: boolean;
   /**
-   * The user\'s full name.
+   * Full name of the user.
    * @type {string}
    * @memberof CreateUserRequest
    */
@@ -73,7 +73,7 @@ export interface CreateUserRequest {
    */
   given_name?: string | null;
   /**
-   * The user\'s middle name or initial.
+   * The user\'s middle name or initial, if applicable.
    * @type {string}
    * @memberof CreateUserRequest
    */
@@ -91,25 +91,25 @@ export interface CreateUserRequest {
    */
   nickname?: string | null;
   /**
-   * The URI pointing to the user\'s profile picture.
+   * URL of the user’s profile image.
    * @type {string}
    * @memberof CreateUserRequest
    */
   picture?: string | null;
   /**
-   * Specifies whether the password policy check should be skipped.
+   * Determines whether configured password policy rules should be bypassed.
    * @type {boolean}
    * @memberof CreateUserRequest
    */
   skip_password_policy_checks?: boolean;
   /**
-   * Specifies whether the identifier restriction checks should be skipped.
+   * Skips blacklist validation for the provided identifiers.
    * @type {boolean}
    * @memberof CreateUserRequest
    */
   skip_identifier_restriction_checks?: boolean;
   /**
-   * Specifies whether the users profile should conform to the options requirements.
+   * Bypasses profile validation rules, such as required fields enforced during signup.
    * @type {boolean}
    * @memberof CreateUserRequest
    */

@@ -8,7 +8,7 @@ export const PasswordAlgorithms = {
   /**
    *
    */
-  BCrypt: 'b_crypt',
+  Bcrypt: 'bcrypt',
 } as const;
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare

@@ -5,7 +5,7 @@
  */
 export interface DisableUserRequest {
   /**
-   * Indicates whether to revoke all sessions associated with the user when disabling the account.
+   * Determines whether active sessions should be revoked when disabling the user.
    * @type {boolean}
    * @memberof DisableUserRequest
    */

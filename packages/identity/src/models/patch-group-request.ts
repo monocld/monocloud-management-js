@@ -5,19 +5,19 @@
  */
 export interface PatchGroupRequest {
   /**
-   * The name of the group.
+   * The display name of the group.
    * @type {string}
    * @memberof PatchGroupRequest
    */
   name?: string;
   /**
-   * The description of the group.
+   * Optional description that indicates the purpose or role of the group.
    * @type {string}
    * @memberof PatchGroupRequest
    */
   description?: string | null;
   /**
-   * Specifies whether the group should be assigned to new users by default.
+   * Indicates whether new users are automatically assigned to this group upon sign-up.
    * @type {boolean}
    * @memberof PatchGroupRequest
    */

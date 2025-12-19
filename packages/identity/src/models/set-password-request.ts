@@ -7,37 +7,37 @@ import { PasswordAlgorithms } from './password-algorithms';
  */
 export interface SetPasswordRequest {
   /**
-   * The password for the user, which will be used for authentication.
+   * Plaintext password to assign to the user.
    * @type {string}
    * @memberof SetPasswordRequest
    */
   password?: string | null;
   /**
-   * The password hash for the user, which will be used for authentication.
+   * A pre-hashed password value. Useful during migrations to avoid forcing a password reset.
    * @type {string}
    * @memberof SetPasswordRequest
    */
   password_hash?: string | null;
   /**
-   * The algorithm used the hash the password for the user.
+   * The hashing algorithm used for the provided password hash.
    * @type {PasswordAlgorithms}
    * @memberof SetPasswordRequest
    */
   password_hash_algorithm?: PasswordAlgorithms;
   /**
-   * Specifies whether the specified password is temporary and will require the user to reset their password on the next sign-in.
+   * Indicates whether the provided password is temporary. If true, the user must reset their password at their next sign-in.
    * @type {boolean}
    * @memberof SetPasswordRequest
    */
   is_temporary_password?: boolean;
   /**
-   * Specifies whether the password policy check should be skipped.
+   * Determines whether configured password policy rules should be bypassed.
    * @type {boolean}
    * @memberof SetPasswordRequest
    */
   skip_password_policy_checks?: boolean;
   /**
-   * Indicates whether to revoke all sessions associated with the user when updating the password.
+   * Determines whether active sessions should be revoked after updating the password.
    * @type {boolean}
    * @memberof SetPasswordRequest
    */
