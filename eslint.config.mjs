@@ -4,6 +4,7 @@ import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 import prettierPluginRecomended from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default defineConfig([
   eslint.configs.recommended,
@@ -21,6 +22,9 @@ export default defineConfig([
         tsconfigRootDir: import.meta.dirname,
       },
     },
+    plugins: {
+      "unused-imports": unusedImports,
+    },
     settings: {
       'import/resolver': {
         typescript: {
@@ -30,6 +34,7 @@ export default defineConfig([
       },
     },
     rules: {
+      "unused-imports/no-unused-imports": "error",
       'no-console': 'warn',
       'consistent-return': 'error',
       'no-unreachable': 'error',
