@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://www.monocloud.com?utm_source=github&utm_medium=monocloud_js" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.monocloud.com?utm_source=github&utm_medium=management_js" target="_blank" rel="noopener noreferrer">
     <picture>
       <img src="https://raw.githubusercontent.com/monocloud/management-js/refs/heads/main/MonoCloud.png" height="100" alt="MonoCloud Logo">
     </picture>
@@ -20,13 +20,13 @@
 
 **MonoCloud Management SDK for JavaScript – programmatically manage apps, policies, configurations, and users via the MonoCloud Management APIs.**
 
-[MonoCloud](https://www.monocloud.com) is a modern, developer-friendly Identity & Access Management platform.
+[MonoCloud](https://www.monocloud.com?utm_source=github&utm_medium=management_js) is a modern, developer-friendly Identity & Access Management platform.
 
 This SDK provides a full-featured, typed JavaScript client for interacting with the **MonoCloud Management APIs**, allowing you to automate tenant administration programmatically.
 
 ## 📘 Documentation
 
-- **Documentation:** https://www.monocloud.com/docs
+- **Documentation:** [https://www.monocloud.com/docs](https://www.monocloud.com/docs?utm_source=github&utm_medium=management_js)
 
 ## Supported Platforms
 
@@ -74,7 +74,7 @@ const result = await adminClient.clients.getAllClients(
 ```
 
 Explore further operations (clients, options, trust stores, etc.) using the same patterns.
-See: https://www.monocloud.com/docs
+See: [https://www.monocloud.com/docs](https://www.monocloud.com/docs?utm_source=github&utm_medium=management_js)
 
 ## Identity API
 
@@ -110,7 +110,7 @@ const result = await identityClient.users.getAllUsers(
 );
 ```
 
-Explore further operations at https://www.monocloud.com/docs
+Explore further operations at [https://www.monocloud.com/docs](https://www.monocloud.com/docs?utm_source=github&utm_medium=management_js)
 
 ## 🤝 Contributing & Support
 
@@ -121,7 +121,7 @@ Explore further operations at https://www.monocloud.com/docs
 
 ### Security
 
-Do **not** report security issues publicly. Please follow the contact instructions at: https://www.monocloud.com/contact
+Do **not** report security issues publicly. Please follow the contact instructions at: [https://www.monocloud.com/contact](https://www.monocloud.com/contact?utm_source=github&utm_medium=management_js)
 
 ## 📄 License
 
